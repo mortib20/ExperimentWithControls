@@ -14,12 +14,10 @@ env:
 
 jobs:
   build:
-
     runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v3
-    
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
@@ -34,8 +32,8 @@ jobs:
     - name: Upload Artifacts
       uses: actions/upload-artifact@v3.1.2
       with:
-        name: $env:PROJECT
-        path: $env:PROJECT/bin/Release/net7.0-windows
+        name: ExperimentWithControls
+        path: ExperimentWithControls/bin/Release/net7.0-windows
         
     #- name: Test
     #  run: dotnet test --no-build --verbosity normal
